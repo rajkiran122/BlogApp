@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent"
+    tools:context=".Activities.PostDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/post_detail_img"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/post_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/eagle_lake"
+            android:lineSpacingExtra="4dp"
+            android:text="Title"
+            android:textColor="#2E2323"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_img" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#2e2e2e"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_title" />
+
+        <TextView
+            android:id="@+id/date_added_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="18 Jun,2020 | by Raju"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/post_detail_description"
+            android:layout_width="0dp"
+            android:lineSpacingExtra="8dp"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="#373737"
+            android:layout_marginEnd="16dp"
+            android:text="The film tells the story of two women separated by over six decades. In 1998, lonely New Yorker Wally Winthrop is obsessed with King Edward VIII's abdication of the British throne so he could marry social climber Wallis Simpson. "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_added_detail" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/post_detail_currentUserphoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_description" />
+
+        <EditText
+            android:id="@+id/post_detail_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/edittext_style_rounded"
+            android:ems="10"
+            android:hint="Write Comment"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/post_detail_currentUserphoto"
+            app:layout_constraintEnd_toStartOf="@+id/post_detail_addcomment"
+            app:layout_constraintStart_toEndOf="@+id/post_detail_currentUserphoto"
+            app:layout_constraintTop_toTopOf="@+id/post_detail_currentUserphoto"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/post_detail_addcomment"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittext_style_rounded"
+            android:text="ADD"
+            app:layout_constraintBottom_toBottomOf="@+id/post_detail_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/post_detail_comment"
+            app:layout_constraintTop_toTopOf="@+id/post_detail_comment"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/post_detail_postUserPhoto"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/date_added_detail"
+            app:layout_constraintStart_toEndOf="@+id/date_added_detail"
+            app:layout_constraintTop_toTopOf="@+id/date_added_detail"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_comment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
