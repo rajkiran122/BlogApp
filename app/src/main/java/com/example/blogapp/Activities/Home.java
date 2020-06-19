@@ -199,6 +199,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         desc_pop = popupAddDialog.findViewById(R.id.popup_description);
         popupProgressBar = popupAddDialog.findViewById(R.id.popup_progressBar);
 
+        //Github ma upload kasari garne after changes made
+
+
         if (currentUser!=null) {
             Glide.with(this).load(currentUser.getPhotoUrl()).into(popupUserImage);
 
